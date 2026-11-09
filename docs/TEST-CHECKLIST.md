@@ -1,33 +1,66 @@
-# Checklist de testes
+# Checklist de testes — feedback Carol
 
-## Testado automaticamente no pacote local
+## Estrutura
 
-- [x] três páginas presentes;
-- [x] H1 único em cada página;
-- [x] title e meta description em cada página;
-- [x] `noindex,nofollow` ativo na homologação;
-- [x] `robots.txt` bloqueando indexação da homologação;
-- [x] rotas internas principais existentes;
-- [x] âncoras locais existentes;
-- [x] assets principais armazenados localmente;
-- [x] imagens com `alt`;
-- [x] ausência de conteúdo fictício/Lorem Ipsum;
-- [x] JavaScript com sintaxe válida;
-- [x] build concluído sem dependências externas;
-- [x] gerador do pré-diagnóstico produz URL oficial do WhatsApp com os dados esperados;
-- [x] `prefers-reduced-motion` previsto no CSS;
-- [x] foco visível em elementos interativos previsto no CSS.
+- [x] Home curta preservada como roteador B2B/B2C
+- [x] Blog preservado na Home com três artigos e acesso ao blog completo
+- [x] Página `/comunidade/` adicionada
+- [x] Header e footer compartilhados
+- [x] Links legais preservados no footer
 
-## Validação visual
+## B2C
 
-O runtime de navegador disponível neste ambiente bloqueou navegação para `localhost`, `file:` e `data:` por política administrativa. Por isso não foi possível executar uma nova captura automatizada diretamente destes arquivos. A direção visual foi construída a partir dos wireframes aprovados e do protótipo estático anterior já renderizado; a validação final de viewport deve ser repetida na URL pública da Vercel assim que o deploy estiver conectado.
+- [x] Título e foco em “Formações para alunos”
+- [x] Trilha visual do Pré-Vendas à liderança
+- [x] Sete formações representadas
+- [x] Persona 50+ / imagem criticada removida da nova versão
+- [x] Prática supervisionada com imagem
+- [x] Nota obrigatória isolada em callout
+- [x] Quiz de 5 perguntas implementado
+- [x] Workshop removido
+- [x] Formação = R$ 897 / 1 ano
+- [x] Premium Formação = R$ 1.499 / 1 ano
+- [x] Soluções B2B = sob consulta
 
-## Pendente de ambiente externo
+## B2B
 
-- [ ] URL pública Vercel confirmada e testada em navegador;
-- [ ] menu mobile testado na URL pública;
-- [ ] integração GitHub → Vercel com auto deploy;
-- [ ] integração CRM definitiva do formulário;
-- [ ] analytics/pixels oficiais;
-- [ ] substituição de imagens/logotipo por arquivos master oficiais, se disponibilizados;
-- [ ] publicação/migração no Wix após aprovação.
+- [x] Formulário reduzido e dividido em 3 etapas
+- [x] Diagnóstico inicial gerado a partir das respostas
+- [x] Diagnóstico pode ser impresso/salvo em PDF pelo navegador
+- [x] Payload estruturado para webhook do CRM
+- [ ] CRM real configurado na Vercel
+- [ ] Automação real de e-mail/PDF configurada no CRM/Make/Zapier/n8n
+
+## Comunidade
+
+- [x] Parceria CEC + Plura Community explicitada
+- [x] White label destacado
+- [x] Papéis de CEC e Plura separados
+- [ ] Substituir o lockup textual pelo arquivo oficial do logo Plura, caso a CEC forneça o asset homologado
+
+## QA técnico realizado antes do merge
+
+- [x] `node --check app.js`
+- [x] `node --check api/lead.js`
+- [x] HTML das quatro páginas inspecionado: um H1 por página
+- [x] `noindex,nofollow` preservado nas páginas de homologação
+- [x] referências de assets locais principais conferidas
+- [x] âncoras internas conferidas
+- [x] diagnóstico B2C testado com cenário de entrada / prospecção
+- [x] diagnóstico B2B testado com cenário de contratação / Bootcamp
+
+## QA após deploy Vercel
+
+- [ ] desktop 1440 px
+- [ ] laptop 1024 px
+- [ ] tablet 768 px
+- [ ] mobile 390 px
+- [ ] mobile 360 px
+- [ ] menu mobile
+- [ ] quiz B2C no ambiente publicado
+- [ ] formulário B2B no ambiente publicado
+- [ ] print/PDF do diagnóstico no ambiente publicado
+- [ ] webhook CRM com lead real de teste
+- [ ] e-mail/automação de diagnóstico
+- [ ] links legais oficiais
+- [ ] links de checkout
